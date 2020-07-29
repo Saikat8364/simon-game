@@ -12,15 +12,23 @@ $(document).keydown(function(){
   }
 });
 
-$("h1").click(function(){
+// $("h1").click(function(){
+//   if (!started) {
+//     $("#level-title").text("Level " + level);
+//     nextSequence();
+//     started = true;
+//   }
+// });
+$(".clk").click(function(){
   if (!started) {
     $("#level-title").text("Level " + level);
     nextSequence();
     started = true;
+      $(".clk").fadeToggle();
   }
 });
 
-$(".btn").click(function(){
+$(".btnn").click(function(){
   var userChosenColor=$(this).attr("id");
   userClickedPattern.push(userChosenColor);
   playSound(userChosenColor);
@@ -62,7 +70,8 @@ function checkAnswer(currentLevel){
       $("body").removeClass("game-over");
     },1000);
 
-    $("h1").text("Game Over, Press Any Key to Restart");
+    $("h1").html("Game Over. Press any key to restart <p>Or</p>");
+
     startOver();
   }
 
@@ -76,4 +85,5 @@ function startOver(){
   level=0;
   gamePattern=[];
   started=false;
+  $(".clk").fadeIn();
 }
