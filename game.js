@@ -19,10 +19,16 @@ $(document).keydown(function(){
 //     started = true;
 //   }
 // });
+$(".documentation").hide();
+$(".rulebtn").click(function(){
+  $(".documentation").toggle();
+});
 $(".clk").click(function(){
   if (!started) {
     $("#level-title").text("Level " + level);
-    nextSequence();
+    setTimeout(function(){
+      nextSequence();
+    },800);
     started = true;
       $(".clk").fadeToggle();
   }

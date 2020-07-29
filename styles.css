@@ -1,16 +1,22 @@
+
 body {
   text-align: center;
-  background-color: #011F3F;
+  background-color: #ffc1fa;
 }
 
 #level-title {
   font-family: 'Press Start 2P', cursive;
   font-size: 3rem;
   margin:  5%;
-  color: #FEF2BF;
+  color: black;
 
 }
-.clk {
+.documentation>p{
+  text-align: left;
+  padding-left: 20%;
+  font-style: bold;
+}
+.clkstyle {
 	box-shadow: 0px 10px 14px -7px #276873;
 	background:linear-gradient(to bottom, #599bb3 5%, #408c99 100%);
 	background-color:#599bb3;
