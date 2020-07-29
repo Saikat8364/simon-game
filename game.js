@@ -19,9 +19,9 @@ $(document).keydown(function(){
 //     started = true;
 //   }
 // });
-$(".documentation").hide();
+$(".documentation").fadeOut();
 $(".rulebtn").click(function(){
-  $(".documentation").toggle();
+  $(".documentation").fadeToggle();
 });
 $(".clk").click(function(){
   if (!started) {
