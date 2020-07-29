@@ -1,6 +1,8 @@
 var buttonColors=["red","blue","green","yellow"];
 var gamePattern=[];
 var userClickedPattern=[];
+var highScore=0;
+var score=0;
 
 var level = 0;
 var started=false;
@@ -71,17 +73,22 @@ function checkAnswer(currentLevel){
     console.log("success");
   }
   else{
+    if(score>highScore){
+      highScore=score;
+    }
     $("body").addClass("game-over");
     setTimeout(function(){
       $("body").removeClass("game-over");
     },1000);
-
+    $(".score ").text("Score of Last Round : "+score);
+    $(".high-score").text("High Score : "+highScore);
     $("h1").html("Game Over. Press any key to restart <p>Or</p>");
 
     startOver();
   }
 
   if(userClickedPattern.length===gamePattern.length){
+    score++;
     setTimeout(function(){
       nextSequence();
     },800);
@@ -89,6 +96,7 @@ function checkAnswer(currentLevel){
 }
 function startOver(){
   level=0;
+  score=0;
   gamePattern=[];
   started=false;
   $(".clk").fadeIn();
